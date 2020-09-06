@@ -1,34 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:unit_converter_app_flutter/category.dart';
 
-class Salam extends StatelessWidget {
+const _categoryName = 'Cake';
+const _categoryIcon = Icons.cake;
+const _categoryColor = Colors.green;
+
+void main() {
+  runApp(UnitConverterApp());
+}
+
+class UnitConverterApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        //color: Colors.deepPurple,
-        height: 400,
-        width: 300,
-        child: Center(
-          child: Text(
-            'Assalam o Alaikum',
-            style: TextStyle(fontSize: 30),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Unit Converter',
+      home: Scaffold(
+        backgroundColor: Colors.green[100],
+        body: Center(
+          child: Category(
+            name: _categoryName,
+            color: _categoryColor,
+            iconLocation: _categoryIcon,
           ),
         ),
       ),
     );
   }
-}
-
-void main() {
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Assalam o Alaikum'),
-        ),
-        body: Salam(),
-      ),
-    ),
-  );
 }
